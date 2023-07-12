@@ -1,0 +1,19 @@
+{
+  "name": "client",
+  "packageManager": "yarn@3.6.1",
+  "scripts": {
+    "build": "yarn webpack"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.1",
+    "@types/webpack": "^5.28.1",
+    "@types/webpack-dev-server": "^4.7.2",
+    "@yarnpkg/sdks": "^3.0.0-rc.48",
+    "ts-node": "^10.9.1",
+    "webpack": "^5.88.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "typescript": "^5.1.6"
+  }
+}
