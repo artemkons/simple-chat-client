@@ -1,14 +1,19 @@
 import path from 'path';
 import webpack from 'webpack';
 
-const config: webpack.Configuration = {
-  mode: 'production',
-  entry: './index.ts',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-    clean: true
-  },
+export default (env: any): webpack.Configuration => {
+  return {
+    mode: env.develompent ? 'development' : 'production',
+    entry: './src/index.tsx',
+    output: {
+      path: path.resolve(__dirname, 'dist'),
+      filename: 'bundle.js',
+      clean: true
+    },
+    module: {
+      rules: [
+        { test: /\.(ts|tsx)$/, loader: "ts-loader" }
+      ]
+    }
+  }
 };
-
-export default config;
