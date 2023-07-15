@@ -1,5 +1,9 @@
-import path from 'path';
-import webpack from 'webpack';
+import path from 'path'
+import webpack from 'webpack'
+
+import * as WebpackDevServer from 'webpack-dev-server'
+
+import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 export default (env: any): webpack.Configuration => {
   return {
@@ -9,6 +13,19 @@ export default (env: any): webpack.Configuration => {
       path: path.resolve(__dirname, 'dist'),
       filename: 'bundle.js',
       clean: true
+    },
+    devtool: 'inline-source-map',
+    plugins: [new HtmlWebpackPlugin({
+      template: 'index.html'
+    })],
+    devServer: {
+      static: {
+        directory: path.join(__dirname, 'dist'),
+      },
+      port: 9000,
+      client: {
+        overlay: false,
+      },
     },
     module: {
       rules: [
