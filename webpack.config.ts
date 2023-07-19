@@ -26,6 +26,12 @@ export default (env: any): webpack.Configuration => {
       client: {
         overlay: false,
       },
+      proxy: {
+        '/socket.io': {
+          target: 'http://localhost:3001',
+          ws: true
+        }
+      },
     },
     module: {
       rules: [
