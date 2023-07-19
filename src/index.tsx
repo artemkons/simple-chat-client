@@ -4,6 +4,8 @@ import { createRoot } from 'react-dom/client';
 import io from 'socket.io-client';
 const socket = io();
 
+socket.on('message', console.log);
+
 const container = document.getElementById('app');
 const root = createRoot(container!);
 
