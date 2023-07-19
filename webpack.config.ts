@@ -35,8 +35,15 @@ export default (env: any): webpack.Configuration => {
     },
     module: {
       rules: [
+        {
+          test: /\.css$/i,
+          use: ["style-loader", "css-loader"],
+        },
         { test: /\.(ts|tsx)$/, loader: "ts-loader" }
       ]
+    },
+    resolve: {
+      extensions: [".ts", ".tsx", ".js", ".jsx"]
     }
   }
 };
