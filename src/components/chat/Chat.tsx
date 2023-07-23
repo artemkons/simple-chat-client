@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
+
 import io from 'socket.io-client';
+
+import Message from "../message";
 
 import "./chat.css";
 
@@ -31,11 +34,7 @@ const Chat = () => {
     <div className="chat">
       <div className="msg-list">
         {
-          msgs.map((msg: string) => 
-            <div className="msg-container from-me">
-              <span className="msg">{msg}</span>
-            </div>
-          )
+          msgs.map((msg: string) => <Message text={msg} fromMe/>)
         }
       </div>
       <form onSubmit={sendMsg}>

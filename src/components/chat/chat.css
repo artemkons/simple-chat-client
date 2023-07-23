@@ -12,19 +12,3 @@
     display: flex;
     flex-direction: column;
 }
-
-.msg-container {
-    margin-bottom: 8px;
-}
-
-.msg-container.from-me {
-    margin-left: auto;
-}
-
-.msg {
-    display: inline-block;
-    padding: 16px;
-    border-radius: 4px;
-    color: #FFF;
-    background-color: #0F0F0F;
-}
