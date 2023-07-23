@@ -1,3 +1,30 @@
-body {
-    background: green;
+.chat {
+    margin: 0 auto;
+    max-width: 650px;
+}
+
+.chat form {
+    display: flex;
+    justify-content: center;
+}
+
+.msg-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.msg-container {
+    margin-bottom: 8px;
+}
+
+.msg-container.from-me {
+    margin-left: auto;
+}
+
+.msg {
+    display: inline-block;
+    padding: 16px;
+    border-radius: 4px;
+    color: #FFF;
+    background-color: #0F0F0F;
 }
