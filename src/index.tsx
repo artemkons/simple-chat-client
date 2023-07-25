@@ -7,12 +7,16 @@ import {
   } from "react-router-dom";
 
 import App from './App';
+import Rooms from './pages/Rooms';
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <App />,
-    }, 
+    }, {
+      path: "/rooms",
+      element: <Rooms />
+    }
   ]);
 
 const container = document.getElementById('app');

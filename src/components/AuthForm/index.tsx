@@ -1,5 +1,9 @@
 import React from "react";
 
+import {
+    Link,
+  } from "react-router-dom";
+
 const AuthForm = () => {
   return (
     <form>
@@ -9,7 +13,7 @@ const AuthForm = () => {
         <option value="dog">JS</option>
         <option value="dog">PHP</option>
       </select>
-      <button>submit</button>
+      <Link to='rooms'>Submit</Link>
     </form>
   );
 };
