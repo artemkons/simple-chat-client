@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-type InputValue = string | number;
+type InputValue = string | number; 
 
 const useInput = (initialValue: InputValue) => {
     const [value, setValue] = useState(initialValue);

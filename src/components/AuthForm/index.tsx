@@ -1,23 +1,32 @@
 import React from "react";
 
-import {
-    Link,
-  } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import useInput from '../../hooks/useInput';
+import useInput from "../../hooks/useInput";
 
 const AuthForm = () => {
-  const usernameInputProps = useInput('')
+  const usernameInputProps = useInput("");
+  const roomSelectProps = useInput("");
 
+  const username = usernameInputProps.value;
+  const room = roomSelectProps.value;
   return (
     <form>
       <input placeholder="username" type="text" {...usernameInputProps} />
-      <select>
+      <select {...roomSelectProps}>
         <option value="">--Please choose a room--</option>
-        <option value="dog">JS</option>
-        <option value="dog">PHP</option>
+        <option value="JS">JS</option>
+        <option value="PHP">PHP</option>
       </select>
-      <Link to='rooms'>Submit</Link>
+      {username && room ? (
+        <Link
+          to={`/rooms/${usernameInputProps.value}/${roomSelectProps.value}`}
+        >
+          Submit
+        </Link>
+      ) : (
+        "Username and room must be specified!"
+      )}
     </form>
   );
 };
