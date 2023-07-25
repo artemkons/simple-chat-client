@@ -1,9 +1,9 @@
 import React from 'react'
-import Chat from './components/chat/Chat'
+import AuthForm from './components/AuthForm';
 
 const App = () => {
   return (
-    <Chat />
+    <AuthForm />
   )
 }
 
