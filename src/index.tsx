@@ -9,7 +9,7 @@ import {
   } from "react-router-dom";
 
 import App from './App';
-import Rooms from './pages/Rooms';
+import Room from './pages/Room';
 
 import { SocketContext } from './context/SocketContext';
 
@@ -18,8 +18,8 @@ const router = createBrowserRouter([
       path: "/",
       element: <App />,
     }, {
-      path: "/rooms/:username/:room",
-      element: <Rooms />
+      path: "/room/:username/:room",
+      element: <Room />
     }
   ]);
 

@@ -20,7 +20,7 @@ const AuthForm = () => {
       </select>
       {username && room ? (
         <Link
-          to={`/rooms/${usernameInputProps.value}/${roomSelectProps.value}`}
+          to={`/room/${usernameInputProps.value}/${roomSelectProps.value}`}
         >
           Submit
         </Link>
