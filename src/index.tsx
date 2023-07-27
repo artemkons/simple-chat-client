@@ -1,6 +1,8 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client';
 
+import io from 'socket.io-client';
+
 import {
     createBrowserRouter,
     RouterProvider,
@@ -8,6 +10,8 @@ import {
 
 import App from './App';
 import Rooms from './pages/Rooms';
+
+import { SocketContext } from './context/SocketContext';
 
 const router = createBrowserRouter([
     {
@@ -22,4 +26,10 @@ const router = createBrowserRouter([
 const container = document.getElementById('app');
 const root = createRoot(container!);
 
-root.render(<RouterProvider router={router} />);
+const socket = io();
+
+root.render(
+  <SocketContext.Provider value={socket}>
+    <RouterProvider router={router} />
+  </SocketContext.Provider>
+);

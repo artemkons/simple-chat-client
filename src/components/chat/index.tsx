@@ -1,21 +1,19 @@
-import React, { useEffect, useState } from "react";
-
-import io from 'socket.io-client';
+import React, { useContext, useEffect, useState } from "react";
 
 import Message from "../Message";
+
+import { SocketContext } from "../../context/SocketContext";
 
 import "./chat.css";
 
 const Chat = () => {
   const [msgs, setMsgs] = useState<string[]>([])
-  const [msgTxt, setMsgTxt] = useState("");
-  const [socket, setSocket] = useState<any>(null)
+  const [msgTxt, setMsgTxt] = useState("")
+
+  const socket = useContext(SocketContext)
 
   useEffect(() => {
-    const socket = io();
-    setSocket(socket);
-
-    socket.on('message', (msg) => { 
+    socket.on('message', (msg: string) => { 
       setMsgs(msgs => [...msgs, msg]);
     });
   }, []);
