@@ -1,8 +1,11 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
 const Rooms = () => {
+  const { username, room } = useParams();
+
   return (
-    <div>RoomsPage</div>
+    <div>{`Hey ${username}, welcome to ${room}`}</div>
   )
 }
 
