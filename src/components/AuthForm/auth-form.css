@@ -1,0 +1,10 @@
+.auth-form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-form > *:not(:last-child) {
+    margin-bottom: 32px;
+}

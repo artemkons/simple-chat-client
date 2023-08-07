@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { InputHTMLAttributes} from 'react'
 
-const Input = () => {
+import './input.css'
+
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
+
+const Input = (props: InputProps) => {
   return (
-    <input />
+    <input className='input' {...props} />
   )
 }
 

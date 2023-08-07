@@ -1,5 +1,14 @@
+:root {
+    --dark: #23292E;
+    --radius: 8px;
+}
+
 body {
     height: 100vh;
     margin: 0;
     background: linear-gradient(135deg, #505561, #2C3239, #22252C);
+}
+
+.app {
+    height: 100%;
 }

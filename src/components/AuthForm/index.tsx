@@ -1,6 +1,11 @@
-import React from "react";
+import React from "react"
 
-import { Link } from "react-router-dom";
+// TODO add form component
+import './auth-form.css'
+
+import { Link } from "react-router-dom"
+
+import Input from '../Input'
 
 import useInput from "../../hooks/useInput";
 
@@ -11,8 +16,8 @@ const AuthForm = () => {
   const username = usernameInputProps.value;
   const room = roomSelectProps.value;
   return (
-    <form>
-      <input placeholder="username" type="text" {...usernameInputProps} />
+    <form className="auth-form">
+      <Input placeholder="username" type="text" {...usernameInputProps} />
       <select {...roomSelectProps}>
         <option value="">--Please choose a room--</option>
         <option value="JS">JS</option>
