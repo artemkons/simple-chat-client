@@ -6,8 +6,9 @@ import './auth-form.css'
 import { Link } from "react-router-dom"
 
 import Input from '../Input'
+import Select from '../Select'
 
-import useInput from "../../hooks/useInput";
+import useInput from "../../hooks/useInput"
 
 const AuthForm = () => {
   const usernameInputProps = useInput("");
@@ -18,11 +19,11 @@ const AuthForm = () => {
   return (
     <form className="auth-form">
       <Input placeholder="username" type="text" {...usernameInputProps} />
-      <select {...roomSelectProps}>
+      <Select {...roomSelectProps}>
         <option value="">--Please choose a room--</option>
         <option value="JS">JS</option>
         <option value="PHP">PHP</option>
-      </select>
+      </Select>
       {username && room ? (
         <Link
           to={`/room/${usernameInputProps.value}/${roomSelectProps.value}`}

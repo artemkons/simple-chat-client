@@ -3,6 +3,10 @@
     --radius: 8px;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     height: 100vh;
     margin: 0;

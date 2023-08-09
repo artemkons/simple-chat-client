@@ -1,0 +1,10 @@
+.select {
+    width: 320px;
+    height: 40px;
+    padding: 12px 14px;
+    color: #FFF;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--dark);
+    box-shadow: -2px -2px 4px 0px #4F5460, 2px 2px 4px 0px #22252C;
+}
