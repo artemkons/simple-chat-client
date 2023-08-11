@@ -7,6 +7,7 @@ import { Link } from "react-router-dom"
 
 import Input from '../Input'
 import Select from '../Select'
+import Button from "../Button"
 
 import useInput from "../../hooks/useInput"
 
@@ -24,15 +25,14 @@ const AuthForm = () => {
         <option value="JS">JS</option>
         <option value="PHP">PHP</option>
       </Select>
-      {username && room ? (
-        <Link
-          to={`/room/${usernameInputProps.value}/${roomSelectProps.value}`}
+        <Button
+          as='route'
+          to={username && room
+            ? `/room/${usernameInputProps.value}/${roomSelectProps.value}`
+            : window.location.pathname}
         >
           Submit
-        </Link>
-      ) : (
-        "Username and room must be specified!"
-      )}
+        </Button>
     </form>
   );
 };
