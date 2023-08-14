@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react'
 import { useParams } from 'react-router-dom'
 
+import './room.css'
+
 import Chat from '../../components/Chat'
 
 import { SocketContext } from '../../context/SocketContext'
@@ -19,17 +21,14 @@ const Room = () => {
 
   useEffect(() => {
     socket.emit('joinRoom', { username, room })
-    socket.on('enteredToRoom', ({ room, users }: { room: string, users: User[] }) => {
+    socket.on('enteredToRoom', ({ users }: { room: string, users: User[] }) => {
       setRoomUsers(users);
     })
   }, [])
 
   return (
-    <div>
-      <ul>
-        {roomUsers.map((user) => <li>{user.username}</li>)}
-      </ul>
-      {`Hey ${username}, welcome to ${room}`}
+    <div className='room'>
+      <div className='room-counter'>{`${room}, ${roomUsers.length}`}</div>
       <Chat />
     </div>
   )

@@ -1,0 +1,19 @@
+.room {
+    height: 100vh;
+    padding: 12px;
+    text-align: center;
+}
+
+.room .room-counter {
+    display: inline-block;
+    margin: 0 auto;
+    color: white;
+    padding: 4px;
+    border-radius: var(--radius);
+    background: var(--dark, #23292E); 
+}
+
+.room .chat {
+    margin-top: 12px;
+    height: calc(100% - 48px);
+}

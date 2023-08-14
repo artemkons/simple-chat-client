@@ -1,9 +1,16 @@
 .chat {
+    position: relative;
+    height: 100%;
     margin: 0 auto;
     max-width: 650px;
+    overflow: scroll;
 }
 
 .chat form {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    margin-top: auto;
     display: flex;
     justify-content: center;
 }
