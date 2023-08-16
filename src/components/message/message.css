@@ -8,8 +8,9 @@
 
 .msg {
     display: inline-block;
-    padding: 16px;
-    border-radius: 4px;
+    border-radius: 8px;
+    background: var(--dark, #23292E);
+    padding: 8px;
     color: #FFF;
-    background-color: #0F0F0F;
+    box-shadow: -2px -2px 4px 0px #4F5460, 2px 2px 4px 0px #22252C;
 }
